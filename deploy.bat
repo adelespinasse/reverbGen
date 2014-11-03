@@ -1,0 +1,1 @@
+rsync -v --perms --chmod=Da+x,a+r -r * aldel@aldel.com:/home/aldel/aldel.com/reverbgen
