@@ -73,9 +73,9 @@ var reverbGen = {};
     return canvas;
   }
 
-  /** Saves an AudioBuffer as a 16-bit WAV file. Normalizes it to peak
-      at +-32767, and optionally truncates it if there's a lot of
-      "silence" at the end.
+  /** Saves an AudioBuffer as a 16-bit WAV file on the client's host
+      file system. Normalizes it to peak at +-32767, and optionally
+      truncates it if there's a lot of "silence" at the end.
 
       @param {!AudioBuffer} buffer The buffer to save.
       @param {string} name Name of file to create.
