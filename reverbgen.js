@@ -49,7 +49,7 @@
       var fadeInSampleFrames = Math.round((params.fadeInTime || 0) * sampleRate);
       // 60dB is a factor of 1 million in power, or 1000 in amplitude.
       var decayBase = Math.pow(1 / 1000, 1 / decaySampleFrames);
-      reverbIR = audioContext.createBuffer(numChannels, numSampleFrames, sampleRate);
+      var reverbIR = audioContext.createBuffer(numChannels, numSampleFrames, sampleRate);
       for (var i = 0; i < numChannels; i++) {
         var chan = reverbIR.getChannelData(i);
         for (var j = 0; j < numSampleFrames; j++) {
