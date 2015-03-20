@@ -1,0 +1,27 @@
+{
+  "name": "reverbGen",
+  "version": "1.0.0",
+  "description": "A JavaScript library for generating artificial reverb impulse responses.",
+  "main": "reverbgen.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adelespinasse/reverbGen"
+  },
+  "keywords": [
+    "impulse-response",
+    "reverb",
+    "audio",
+    "sound",
+    "reverberation",
+    "echo"
+  ],
+  "author": "Alan deLespinasse",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/adelespinasse/reverbGen/issues"
+  },
+  "homepage": "https://github.com/adelespinasse/reverbGen"
+}

@@ -1,2 +1,5 @@
 # Emacs backup files
 *~
+
+#npm
+*.tgz
