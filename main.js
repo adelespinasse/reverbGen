@@ -34,7 +34,8 @@ function makeAudioContext() {
     alert("This browser doesn't support the Web Audio API standard. Try the latest version of Chrome or Firefox.");
     return;
   }
-
+  document.getElementById('sampleRate').value = audioContext.sampleRate;
+  
   masterGain = audioContext.createGain();
   masterGain.gain.value = 0.5;
   convolver = audioContext.createConvolver();  
@@ -66,7 +67,15 @@ function doGenerateReverb() {
     var feedbackDiv = document.getElementById('feedbackSection');
     feedbackDiv.innerHTML = '';
     feedbackDiv.appendChild(reverbGen.generateGraph(reverbIR.getChannelData(0), 400, 150, -1, 1));
-    convolver.buffer = reverbIR;
+    try {
+      convolver.buffer = reverbIR;
+    } catch(e) {
+      alert("There was an error creating the convolver, probably because you chose " +
+            "a sample rate that doesn't match your browser's playback (" + audioContext.sampleRate +
+            "). Playing the demo sounds through your impulse response may not work, " +
+            "but you should be able to play and/or save the impulse response. Error message: " + e);
+      convolver.buffer = audioContext.createBuffer(params.numChannels, 1, audioContext.sampleRate);
+    }
 
     // if (lpFreqStart) {
     //   feedbackDiv.appendChild(document.createElement('br'));
