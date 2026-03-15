@@ -3,3 +3,6 @@
 
 #npm
 *.tgz
+node_modules/
+dist/
+dist-demo/

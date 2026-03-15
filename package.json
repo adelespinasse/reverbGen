@@ -1,10 +1,28 @@
 {
-  "name": "reverbGen",
-  "version": "1.0.0",
-  "description": "A JavaScript library for generating artificial reverb impulse responses.",
-  "main": "reverbgen.js",
+  "name": "@adelespinasse/reverbgen",
+  "version": "2.0.0",
+  "description": "A TypeScript library for generating artificial reverb impulse responses.",
+  "type": "module",
+  "main": "./dist/reverbgen.cjs",
+  "module": "./dist/reverbgen.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/reverbgen.js",
+      "require": "./dist/reverbgen.cjs",
+      "types": "./dist/index.d.ts"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite",
+    "build:lib": "vite build --config vite.lib.config.ts",
+    "build:demo": "vite build",
+    "build": "npm run build:lib && npm run build:demo",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit"
   },
   "repository": {
     "type": "git",
@@ -23,5 +41,11 @@
   "bugs": {
     "url": "https://github.com/adelespinasse/reverbGen/issues"
   },
-  "homepage": "https://github.com/adelespinasse/reverbGen"
+  "homepage": "https://github.com/adelespinasse/reverbGen",
+  "devDependencies": {
+    "@types/node": "^25.3.5",
+    "typescript": "^5.0.0",
+    "vite": "^5.0.0",
+    "vite-plugin-dts": "^3.0.0"
+  }
 }
