@@ -1,6 +1,6 @@
 {
-  "name": "@adelespinasse/reverbgen",
-  "version": "2.0.0",
+  "name": "@aldel/reverbgen",
+  "version": "2.0.1",
   "description": "A TypeScript library for generating artificial reverb impulse responses.",
   "type": "module",
   "main": "./dist/reverbgen.cjs",
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/adelespinasse/reverbGen"
+    "url": "git+https://github.com/adelespinasse/reverbGen.git"
   },
   "keywords": [
     "impulse-response",
