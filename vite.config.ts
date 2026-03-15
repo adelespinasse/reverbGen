@@ -3,6 +3,7 @@ import { resolve } from 'path';
 
 // Demo app config (default)
 export default defineConfig({
+  base: './',
   root: 'src/demo',
   // public/ contains a symlink to drysounds/ so they're served at /drysounds/
   publicDir: resolve(__dirname, 'public'),
