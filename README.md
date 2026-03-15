@@ -4,14 +4,14 @@ A TypeScript library for generating artificial reverb impulse responses.
 
 This library generates simulated room impulse responses that sound fairly decent when used in convolution reverb effects, including the Web Audio API's ConvolverNode. You can use it in your web apps to generate impulse responses as needed, or generate sound files in advance to use in any audio application.
 
-If you just want to generate some impulse responses, see the hosted version at [aldel.com/reverbgen](http://aldel.com/reverbgen).
+If you just want to generate some impulse responses, see the hosted app at [aldel.com/reverbgen](https://aldel.com/reverbgen).
 
-The method used to generate the impulse responses is somewhat inspired by the classic paper [About This Reverberation Business](http://www.music.mcgill.ca/~gary/courses/papers/Moorer-Reverb-CMJ-1979.pdf), by James A. Moorer, which notes that exponentially decaying white noise makes a surprisingly good sounding reverb response. This implementation adds a short user-selectable fade-in time and a gradually changing lowpass filter.
+The method used to generate the impulse responses is somewhat inspired by the classic paper [About This Reverberation Business](https://www.researchgate.net/publication/239735102_About_This_Reverberation_Business), by James A. Moorer, which notes that exponentially decaying white noise makes a surprisingly good sounding reverb response. This implementation adds a short user-selectable fade-in time and a gradually changing lowpass filter.
 
 ## Installation
 
 ```
-npm install @adelespinasse/reverbgen
+npm install @aldel/reverbgen
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ npm install @adelespinasse/reverbgen
 Generates a reverb impulse response as an `AudioBuffer`. Returns a `Promise<AudioBuffer>`.
 
 ```typescript
-import { generateReverb } from 'reverbgen';
+import { generateReverb } from '@aldel/reverbgen';
 
 const audioContext = new AudioContext();
 const convolver = audioContext.createConvolver();
@@ -52,7 +52,7 @@ All parameters except `decayTime` are optional.
 Creates a `<canvas>` element showing a graph of the given data. Useful for visualizing the impulse response waveform.
 
 ```typescript
-import { generateGraph } from 'reverbgen';
+import { generateGraph } from '@aldel/reverbgen';
 
 const buffer = await generateReverb({ decayTime: 2.5 });
 const canvas = generateGraph(buffer.getChannelData(0), 400, 150, -1, 1);
@@ -64,7 +64,7 @@ document.body.appendChild(canvas);
 Saves an `AudioBuffer` as a normalized 16-bit WAV file, triggering a browser download.
 
 ```typescript
-import { saveWavFile } from 'reverbgen';
+import { saveWavFile } from '@aldel/reverbgen';
 
 const buffer = await generateReverb({ decayTime: 2.5 });
 saveWavFile(buffer, 'my-reverb.wav', 5);
