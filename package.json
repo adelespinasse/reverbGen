@@ -1,6 +1,6 @@
 {
   "name": "@aldel/reverbgen",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A TypeScript library for generating artificial reverb impulse responses.",
   "type": "module",
   "main": "./dist/reverbgen.cjs",
@@ -45,7 +45,7 @@
   "devDependencies": {
     "@types/node": "^25.3.5",
     "typescript": "^5.0.0",
-    "vite": "^8.0.13",
-    "vite-plugin-dts": "^3.0.0"
+    "unplugin-dts": "^1.0.0",
+    "vite": "^8.0.13"
   }
 }
