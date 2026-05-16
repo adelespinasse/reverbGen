@@ -71,3 +71,18 @@ saveWavFile(buffer, 'my-reverb.wav', 5);
 ```
 
 The optional `minTail` parameter truncates trailing near-silence: the file is cut at the last sample frame where any channel has an absolute value (post-normalization, as a 16-bit integer) greater than `minTail`. Defaults to `0` (no truncation).
+
+## Development
+
+Built with Vite. Package source is in `src/lib`; demo app source is in `src/demo`.
+
+To run demo app locally in dev mode:
+```
+npm install
+npm run dev
+```
+
+To publish a new version of the NPM package:
+* Manually update version number in `package.json`
+* `npm run build:lib`
+* `npm publish`
